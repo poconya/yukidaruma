@@ -48,8 +48,10 @@ body {
 .snow {
   position: fixed;
   inset: 0;
+
   pointer-events: none;
   overflow: hidden;
+
   z-index: 10;
 }
 
@@ -99,6 +101,7 @@ body {
 }
 
 @keyframes fall {
+
   0% {
     transform: translateY(-30px) rotate(0deg);
     opacity: 0;
@@ -112,6 +115,7 @@ body {
     transform: translateY(110vh) rotate(180deg);
     opacity: 0.5;
   }
+
 }
 
 
@@ -140,32 +144,39 @@ body {
 }
 
 .hero::before {
+
   content: "✦";
+
   position: absolute;
 
   top: 45px;
   left: 15%;
 
   color: #f4c95d;
+
   font-size: 28px;
 
   animation: twinkle 2s ease-in-out infinite;
 }
 
 .hero::after {
+
   content: "✦";
+
   position: absolute;
 
   top: 95px;
   right: 16%;
 
   color: #f4c95d;
+
   font-size: 20px;
 
   animation: twinkle 2.5s ease-in-out infinite;
 }
 
 @keyframes twinkle {
+
   0%, 100% {
     opacity: 0.35;
     transform: scale(0.8);
@@ -175,21 +186,28 @@ body {
     opacity: 1;
     transform: scale(1.2);
   }
+
 }
 
 .hero-decoration {
+
   color: #9ed8f5;
+
   font-size: 28px;
+
   letter-spacing: 12px;
+
   margin-bottom: 15px;
 }
 
 .hero h1 {
+
   margin: 0;
 
   color: #4b9dcc;
 
   font-size: clamp(28px, 6vw, 48px);
+
   font-weight: bold;
 
   text-shadow:
@@ -198,30 +216,14 @@ body {
 }
 
 .hero-subtitle {
+
   margin-top: 15px;
 
   color: #788b9b;
+
   font-size: 14px;
+
   letter-spacing: 0.12em;
-}
-
-
-/* =========================
-   雪山・雪原っぽい装飾
-   ========================= */
-
-.snow-ground {
-  position: relative;
-
-  height: 30px;
-  margin-bottom: 35px;
-
-  background: #ffffff;
-
-  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-
-  box-shadow:
-    0 -5px 15px rgba(100, 180, 220, 0.12);
 }
 
 
@@ -230,9 +232,11 @@ body {
    ========================= */
 
 .section {
+
   position: relative;
 
   margin-bottom: 30px;
+
   padding: 30px 32px;
 
   background: rgba(255, 255, 255, 0.88);
@@ -246,8 +250,11 @@ body {
 }
 
 .section h2 {
+
   display: flex;
+
   align-items: center;
+
   gap: 10px;
 
   margin: 0 0 20px;
@@ -258,18 +265,34 @@ body {
 }
 
 .section h2::before {
+
   content: "❄";
 
   color: #f0c44f;
+
   font-size: 20px;
 }
 
 .section p {
+
   margin: 0 0 15px;
 }
 
 .section p:last-child {
+
   margin-bottom: 0;
+}
+
+
+/* =========================
+   参加を促す文章
+   ========================= */
+
+.welcome-message {
+
+  margin-top: 20px;
+
+  color: #526477;
 }
 
 
@@ -278,7 +301,9 @@ body {
    ========================= */
 
 .highlight {
+
   margin: 20px 0;
+
   padding: 18px 20px;
 
   background: #f4fbff;
@@ -289,7 +314,93 @@ body {
 }
 
 .highlight strong {
+
   color: #438fbd;
+}
+
+
+/* =========================
+   テンプレート
+   ========================= */
+
+.template-box {
+
+  width: 360px;
+
+  max-width: 100%;
+
+  margin: 25px auto;
+
+  padding: 16px 20px;
+
+  text-align: center;
+
+  background: #f4fbff;
+
+  border: 1px solid #b9e2f5;
+
+  border-radius: 12px;
+}
+
+.template-box h3 {
+
+  margin: 0 0 12px;
+
+  color: #4b9dcc;
+
+  font-size: 17px;
+}
+
+.template-image {
+
+  display: block;
+
+  width: 288px;
+  height: 192px;
+
+  max-width: 100%;
+
+  margin: 0 auto 18px;
+
+  image-rendering: pixelated;
+
+  object-fit: contain;
+}
+
+
+/* =========================
+   ダウンロードボタン
+   ========================= */
+
+.download-button {
+
+  display: inline-block;
+
+  padding: 10px 22px;
+
+  color: #ffffff;
+
+  background: #7fc5e8;
+
+  border-radius: 25px;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  box-shadow:
+    0 4px 10px rgba(80, 150, 190, 0.18);
+
+  transition:
+    transform 0.2s,
+    background 0.2s;
+}
+
+.download-button:hover {
+
+  background: #67b6df;
+
+  transform: translateY(-2px);
 }
 
 
@@ -298,13 +409,16 @@ body {
    ========================= */
 
 .step {
+
   margin: 22px 0;
 }
 
 .step-title {
+
   display: inline-block;
 
   margin-bottom: 10px;
+
   padding: 5px 14px;
 
   color: #ffffff;
@@ -314,10 +428,12 @@ body {
   border-radius: 20px;
 
   font-size: 14px;
+
   font-weight: bold;
 }
 
 .step strong {
+
   color: #4c92ba;
 }
 
@@ -327,7 +443,9 @@ body {
    ========================= */
 
 .mail-box {
+
   margin-top: 18px;
+
   padding: 18px 20px;
 
   background: #fffdf2;
@@ -338,6 +456,7 @@ body {
 }
 
 .mail-box strong {
+
   color: #c59b27;
 }
 
@@ -347,9 +466,11 @@ body {
    ========================= */
 
 .deadline {
+
   text-align: center;
 
   margin-top: 10px;
+
   padding: 25px;
 
   background:
@@ -365,17 +486,22 @@ body {
 }
 
 .deadline-label {
+
   color: #78aeca;
+
   font-size: 14px;
+
   font-weight: bold;
 }
 
 .deadline-date {
+
   margin-top: 5px;
 
   color: #d0a52d;
 
   font-size: 25px;
+
   font-weight: bold;
 }
 
@@ -385,18 +511,22 @@ body {
    ========================= */
 
 footer {
+
   padding: 45px 20px 60px;
 
   text-align: center;
 
   color: #8aa0af;
+
   font-size: 13px;
 }
 
 footer .stars {
+
   margin-bottom: 10px;
 
   color: #e5bd4c;
+
   letter-spacing: 8px;
 }
 
@@ -408,84 +538,53 @@ footer .stars {
 @media (max-width: 600px) {
 
   .hero {
+
     padding: 55px 15px 45px;
   }
 
   .hero h1 {
+
     font-size: 30px;
   }
 
   .section {
+
     padding: 24px 20px;
+
     border-radius: 14px;
   }
 
   .section h2 {
+
     font-size: 19px;
   }
 
+  .template-box {
+
+    width: 300px;
+  }
+
+  .template-image {
+
+    width: 240px;
+    height: 160px;
+  }
+
   .deadline-date {
+
     font-size: 21px;
   }
 
 }
-/* =========================
-   テンプレート
-   ========================= */
-
-.template-box {
-  margin: 25px 0;
-  padding: 25px;
-
-  text-align: center;
-
-  background: #f4fbff;
-  border: 1px solid #b9e2f5;
-  border-radius: 14px;
-}
-
-.template-box h3 {
-  margin: 0 0 20px;
-
-  color: #4b9dcc;
-  font-size: 18px;
-}
-
-.template-image {
+.venue-image {
   display: block;
-
-  width: 288px;
-  height: 192px;
-
+  width: 808px;
   max-width: 100%;
-  margin: 0 auto 20px;
-
-  image-rendering: pixelated;
-  object-fit: contain;
+  height: auto;
+  margin: 20px auto 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(80, 150, 190, 0.15);
 }
-
-.download-button {
-  display: inline-block;
-
-  padding: 10px 22px;
-
-  color: #ffffff;
-  background: #7fc5e8;
-
-  border-radius: 25px;
-
-  text-decoration: none;
-  font-weight: bold;
-
-  transition: 0.2s;
-}
-
-.download-button:hover {
-  background: #67b6df;
-  transform: translateY(-2px);
-}
-
-
 
    
 </style>
@@ -498,12 +597,14 @@ footer .stars {
 <!-- 雪 -->
 
 <div class="snow">
+
   <span>❄</span>
   <span>❅</span>
   <span>✧</span>
   <span>❄</span>
   <span>✦</span>
   <span>❅</span>
+
 </div>
 
 
@@ -551,11 +652,15 @@ footer .stars {
       メイン会場内に展示させていただきます。
     </p>
 
-    <div class="highlight">
+    <p class="welcome-message">
       イベント参加の思い出のひとつとして、
       <strong>ぜひお気軽にご参加ください⛄✨</strong>
-    </div>
-
+    </p>
+<img
+  src="会場中央.png"
+  alt="雪だるまが展示された会場中央のイメージ"
+  class="venue-image"
+>
   </section>
 
 
@@ -583,78 +688,47 @@ footer .stars {
     </p>
 
     <p>
-      お試しとしてフィンレイ様の雪だるまを制作しておりますので、
       雪だるまのサイズ感や、実際に会場へ展示した際のイメージをご確認いただければと思います。
+      お試しとしてフィンレイ様の雪だるまを制作しておりますので、ご参考になれば幸いです。
     </p>
-<!-- 雪だるま -->
-
-<section class="section">
-
-  <h2>雪だるまのイメージ</h2>
-
-  <p>
-    会場の入口左側と中央に、テンプレートの雪だるまを展示しています。
-  </p>
-
-  <p>
-    お試しとしてフィンレイ様の雪だるまを制作しておりますので、
-    雪だるまのサイズ感や、実際に会場へ展示した際のイメージをご確認いただければと思います。
-  </p>
 
 
-  <!-- ★ここからテンプレート表示 -->
+    <!-- テンプレート -->
 
-  <div class="template-box">
+    <div class="template-box">
 
-    <h3>⛄ 雪だるまテンプレート</h3>
+      <h3>⛄ 雪だるまテンプレート</h3>
 
-    <img
-      src="雪だるま_テンプレ.png"
-      alt="雪だるまテンプレート"
-      class="template-image"
-    >
+      <img
+        src="雪だるま_テンプレ.png"
+        alt="雪だるまテンプレート"
+        class="template-image"
+      >
 
-    <a
-      href="雪だるま_テンプレ.png"
-      download="雪だるま_テンプレ.png"
-      class="download-button"
-    >
-      ❄ テンプレートをダウンロード
-    </a>
+      <a
+        href="雪だるま_テンプレ.png"
+        download="雪だるま_テンプレ.png"
+        class="download-button"
+      >
+        ❄ テンプレートをダウンロード
+      </a>
 
-  </div>
-
-  <!-- ★ここまで -->
-
-
-  <div class="highlight">
-    テンプレートは「帽子をかぶった2段の雪だるま」です。<br>
-    帽子の有無・雪だるまの段数などは自由に変更していただけます。
-  </div>
-
-  <p>
-    キャンバスサイズが
-    <strong>縦96px × 横64px</strong>
-    であれば、テンプレートを使用せず、
-    白紙の状態から自由に制作していただくことも可能です。
-  </p>
-
-  <p>
-    キャンバス内であれば、雪だるまの大きさ・配置は自由です。
-  </p>
-
-  <div class="highlight">
-    <strong>1サークルにつき、最大4体</strong>までご応募いただけます。
-  </div>
-
-</section>
-    <div class="highlight">
-      テンプレートは「帽子をかぶった2段の雪だるま」です。<br>
-      帽子の有無・雪だるまの段数などは自由に変更していただけます。
     </div>
 
+
+    <div class="highlight">
+
+      テンプレートは「帽子をかぶった2段の雪だるま」ですが、
+
+      <br>
+
+      帽子の有無・雪だるまの段数などは自由に変更していただいて構いません。
+
+    </div>
+
+
     <p>
-      キャンバスサイズが
+      また、キャンバスサイズが
       <strong>縦96px × 横64px</strong>
       であれば、テンプレートを使用せず、
       白紙の状態から自由に制作していただくことも可能です。
@@ -665,7 +739,9 @@ footer .stars {
     </p>
 
     <div class="highlight">
+
       <strong>1サークルにつき、最大4体</strong>までご応募いただけます。
+
     </div>
 
   </section>
@@ -676,6 +752,7 @@ footer .stars {
   <section class="section">
 
     <h2>参加方法</h2>
+
 
     <div class="step">
 
@@ -689,7 +766,8 @@ footer .stars {
       </p>
 
       <p>
-        テンプレートは、X（@ButST2026）よりダウンロードいただけます。
+        テンプレートは、画像下のダウンロードボタンまたは
+        X（@ButST2026）よりダウンロードいただけます。
       </p>
 
     </div>
@@ -706,14 +784,17 @@ footer .stars {
         主催・ぽこ宛に画像を添付してお送りください。
       </p>
 
+
       <div class="mail-box">
 
         <strong>メール件名</strong><br>
+
         雪だるま_サークル名
 
         <br><br>
 
         <strong>メール本文</strong><br>
+
         1. サークル名<br>
         2. サークル主名（ニックネーム）<br>
         3. 作品のひとことコメント（なくてもOK）
@@ -721,11 +802,13 @@ footer .stars {
         <br><br>
 
         <strong>画像ファイル名</strong><br>
+
         雪だるま_サークル名_サークル主名
 
         <br><br>
 
         <strong>送付先</strong><br>
+
         主催　ぽこ<br>
         splashginger88-poco@yahoo.co.jp
 
@@ -742,13 +825,18 @@ footer .stars {
 
     <h2>制作時のお願い</h2>
 
-    <p>・背景は透過してください。</p>
+    <p>
+      ・背景は透過してください。
+    </p>
 
-    <p>・雪だるまは、あくねこに関するテーマで制作してください。</p>
+    <p>
+      ・雪だるまは、あくねこに関するテーマで制作してください。
+    </p>
 
     <p>
       ・創作主様をモチーフとした雪だるまは、
       今回は対象外とさせていただきます。
+      申し訳ございません。
     </p>
 
   </section>
@@ -775,14 +863,18 @@ footer .stars {
     </p>
 
     <div class="highlight">
+
       雪だるまの並べ順にご希望がある場合は、
       メール本文へご記載ください。
+
       <br><br>
+
       例えば、
       「○○（左）と○○（右）を隣り合わせにして、
       ハイタッチしているように見せたい」
       など、雪だるま同士の配置についてご希望がありましたら、
       可能な範囲で対応いたします。
+
     </div>
 
     <p>
@@ -842,7 +934,7 @@ footer .stars {
   </section>
 
 
-  <!-- お知らせ -->
+  <!-- 主催からのお知らせ -->
 
   <section class="section">
 
@@ -927,13 +1019,15 @@ footer .stars {
 </div>
 
 
+<!-- フッター -->
+
 <footer>
 
   <div class="stars">
     ✦ ❄ ✦ ❄ ✦
   </div>
 
-  主様の雪だるままつり
+  主様の雪だるままつり＠主催ぽこ
 
 </footer>
 
