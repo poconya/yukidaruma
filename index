@@ -1,0 +1,824 @@
+```html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>主様の雪だるままつり</title>
+
+<style>
+
+/* =========================
+   全体
+   ========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family:
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    "Meiryo",
+    sans-serif;
+
+  color: #526477;
+
+  background:
+    linear-gradient(
+      180deg,
+      #cfeeff 0%,
+      #eaf8ff 45%,
+      #ffffff 100%
+    );
+
+  line-height: 1.8;
+}
+
+
+/* =========================
+   雪
+   ========================= */
+
+.snow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.snow span {
+  position: absolute;
+  top: -20px;
+
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 18px;
+
+  animation: fall linear infinite;
+}
+
+.snow span:nth-child(1) {
+  left: 8%;
+  animation-duration: 9s;
+}
+
+.snow span:nth-child(2) {
+  left: 22%;
+  animation-duration: 12s;
+  animation-delay: 2s;
+}
+
+.snow span:nth-child(3) {
+  left: 38%;
+  animation-duration: 10s;
+  animation-delay: 4s;
+}
+
+.snow span:nth-child(4) {
+  left: 55%;
+  animation-duration: 14s;
+  animation-delay: 1s;
+}
+
+.snow span:nth-child(5) {
+  left: 72%;
+  animation-duration: 11s;
+  animation-delay: 3s;
+}
+
+.snow span:nth-child(6) {
+  left: 88%;
+  animation-duration: 13s;
+  animation-delay: 5s;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-30px) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(110vh) rotate(180deg);
+    opacity: 0.5;
+  }
+}
+
+
+/* =========================
+   メイン
+   ========================= */
+
+.container {
+  width: min(900px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+
+/* =========================
+   ヘッダー
+   ========================= */
+
+.hero {
+  position: relative;
+
+  text-align: center;
+
+  padding: 80px 20px 70px;
+
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "✦";
+  position: absolute;
+
+  top: 45px;
+  left: 15%;
+
+  color: #f4c95d;
+  font-size: 28px;
+
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+.hero::after {
+  content: "✦";
+  position: absolute;
+
+  top: 95px;
+  right: 16%;
+
+  color: #f4c95d;
+  font-size: 20px;
+
+  animation: twinkle 2.5s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.hero-decoration {
+  color: #9ed8f5;
+  font-size: 28px;
+  letter-spacing: 12px;
+  margin-bottom: 15px;
+}
+
+.hero h1 {
+  margin: 0;
+
+  color: #4b9dcc;
+
+  font-size: clamp(28px, 6vw, 48px);
+  font-weight: bold;
+
+  text-shadow:
+    2px 2px 0 #ffffff,
+    0 3px 10px rgba(76, 145, 190, 0.18);
+}
+
+.hero-subtitle {
+  margin-top: 15px;
+
+  color: #788b9b;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+}
+
+
+/* =========================
+   雪山・雪原っぽい装飾
+   ========================= */
+
+.snow-ground {
+  position: relative;
+
+  height: 30px;
+  margin-bottom: 35px;
+
+  background: #ffffff;
+
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+
+  box-shadow:
+    0 -5px 15px rgba(100, 180, 220, 0.12);
+}
+
+
+/* =========================
+   セクション
+   ========================= */
+
+.section {
+  position: relative;
+
+  margin-bottom: 30px;
+  padding: 30px 32px;
+
+  background: rgba(255, 255, 255, 0.88);
+
+  border: 1px solid rgba(142, 207, 239, 0.55);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 8px 25px rgba(76, 145, 190, 0.10);
+}
+
+.section h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin: 0 0 20px;
+
+  color: #4b9dcc;
+
+  font-size: 21px;
+}
+
+.section h2::before {
+  content: "❄";
+
+  color: #f0c44f;
+  font-size: 20px;
+}
+
+.section p {
+  margin: 0 0 15px;
+}
+
+.section p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================
+   強調
+   ========================= */
+
+.highlight {
+  margin: 20px 0;
+  padding: 18px 20px;
+
+  background: #f4fbff;
+
+  border-left: 5px solid #f3c95b;
+
+  border-radius: 8px;
+}
+
+.highlight strong {
+  color: #438fbd;
+}
+
+
+/* =========================
+   参加方法
+   ========================= */
+
+.step {
+  margin: 22px 0;
+}
+
+.step-title {
+  display: inline-block;
+
+  margin-bottom: 10px;
+  padding: 5px 14px;
+
+  color: #ffffff;
+
+  background: #82c6e9;
+
+  border-radius: 20px;
+
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.step strong {
+  color: #4c92ba;
+}
+
+
+/* =========================
+   メール情報
+   ========================= */
+
+.mail-box {
+  margin-top: 18px;
+  padding: 18px 20px;
+
+  background: #fffdf2;
+
+  border: 1px solid #f2df9b;
+
+  border-radius: 10px;
+}
+
+.mail-box strong {
+  color: #c59b27;
+}
+
+
+/* =========================
+   締切
+   ========================= */
+
+.deadline {
+  text-align: center;
+
+  margin-top: 10px;
+  padding: 25px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e6f7ff,
+      #fffbed
+    );
+
+  border: 2px solid #9ed8f5;
+
+  border-radius: 16px;
+}
+
+.deadline-label {
+  color: #78aeca;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.deadline-date {
+  margin-top: 5px;
+
+  color: #d0a52d;
+
+  font-size: 25px;
+  font-weight: bold;
+}
+
+
+/* =========================
+   フッター
+   ========================= */
+
+footer {
+  padding: 45px 20px 60px;
+
+  text-align: center;
+
+  color: #8aa0af;
+  font-size: 13px;
+}
+
+footer .stars {
+  margin-bottom: 10px;
+
+  color: #e5bd4c;
+  letter-spacing: 8px;
+}
+
+
+/* =========================
+   スマホ
+   ========================= */
+
+@media (max-width: 600px) {
+
+  .hero {
+    padding: 55px 15px 45px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .section {
+    padding: 24px 20px;
+    border-radius: 14px;
+  }
+
+  .section h2 {
+    font-size: 19px;
+  }
+
+  .deadline-date {
+    font-size: 21px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- 雪 -->
+
+<div class="snow">
+  <span>❄</span>
+  <span>❅</span>
+  <span>✧</span>
+  <span>❄</span>
+  <span>✦</span>
+  <span>❅</span>
+</div>
+
+
+<!-- ヘッダー -->
+
+<header class="hero">
+
+  <div class="hero-decoration">
+    ❄　✦　❄
+  </div>
+
+  <h1>
+    ⛄ 主様の雪だるままつり ⛄
+  </h1>
+
+  <div class="hero-subtitle">
+    冬の会場を、みんなの雪だるまで彩ろう
+  </div>
+
+</header>
+
+
+<div class="container">
+
+
+  <!-- 企画内容 -->
+
+  <section class="section">
+
+    <h2>企画内容</h2>
+
+    <p>
+      ピクスクのメイン会場に、サークル参加者様が制作された
+      雪だるま（雪像）を展示する企画です⛄
+    </p>
+
+    <p>
+      会場中央にムーちゃんの雪だるまを作ったことをきっかけに、
+      「皆様の雪だるまも一緒に飾ったら、主様同士の交流のきっかけになるのでは？」
+      と思い、企画を検討しました。
+    </p>
+
+    <p>
+      ご参加いただいた皆様の雪だるまは、
+      メイン会場内に展示させていただきます。
+    </p>
+
+    <div class="highlight">
+      イベント参加の思い出のひとつとして、
+      <strong>ぜひお気軽にご参加ください⛄✨</strong>
+    </div>
+
+  </section>
+
+
+  <!-- 参加対象 -->
+
+  <section class="section">
+
+    <h2>参加対象</h2>
+
+    <p>
+      本イベントのサークル参加者様
+    </p>
+
+  </section>
+
+
+  <!-- 雪だるま -->
+
+  <section class="section">
+
+    <h2>雪だるまのイメージ</h2>
+
+    <p>
+      会場の入口左側と中央に、テンプレートの雪だるまを展示しています。
+    </p>
+
+    <p>
+      お試しとしてフィンレイ様の雪だるまを制作しておりますので、
+      雪だるまのサイズ感や、実際に会場へ展示した際のイメージをご確認いただければと思います。
+    </p>
+
+    <div class="highlight">
+      テンプレートは「帽子をかぶった2段の雪だるま」です。<br>
+      帽子の有無・雪だるまの段数などは自由に変更していただけます。
+    </div>
+
+    <p>
+      キャンバスサイズが
+      <strong>縦96px × 横64px</strong>
+      であれば、テンプレートを使用せず、
+      白紙の状態から自由に制作していただくことも可能です。
+    </p>
+
+    <p>
+      キャンバス内であれば、雪だるまの大きさ・配置は自由です。
+    </p>
+
+    <div class="highlight">
+      <strong>1サークルにつき、最大4体</strong>までご応募いただけます。
+    </div>
+
+  </section>
+
+
+  <!-- 参加方法 -->
+
+  <section class="section">
+
+    <h2>参加方法</h2>
+
+    <div class="step">
+
+      <div class="step-title">
+        ① 雪だるまを制作
+      </div>
+
+      <p>
+        テンプレートの雪だるま画像を参考に、
+        ご自由に雪だるまを制作してください。
+      </p>
+
+      <p>
+        テンプレートは、X（@ButST2026）よりダウンロードいただけます。
+      </p>
+
+    </div>
+
+
+    <div class="step">
+
+      <div class="step-title">
+        ② 完成した雪だるまを主催へ送付
+      </div>
+
+      <p>
+        雪だるまが完成しましたら、
+        主催・ぽこ宛に画像を添付してお送りください。
+      </p>
+
+      <div class="mail-box">
+
+        <strong>メール件名</strong><br>
+        雪だるま_サークル名
+
+        <br><br>
+
+        <strong>メール本文</strong><br>
+        1. サークル名<br>
+        2. サークル主名（ニックネーム）<br>
+        3. 作品のひとことコメント（なくてもOK）
+
+        <br><br>
+
+        <strong>画像ファイル名</strong><br>
+        雪だるま_サークル名_サークル主名
+
+        <br><br>
+
+        <strong>送付先</strong><br>
+        主催　ぽこ<br>
+        splashginger88-poco@yahoo.co.jp
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- 制作時のお願い -->
+
+  <section class="section">
+
+    <h2>制作時のお願い</h2>
+
+    <p>・背景は透過してください。</p>
+
+    <p>・雪だるまは、あくねこに関するテーマで制作してください。</p>
+
+    <p>
+      ・創作主様をモチーフとした雪だるまは、
+      今回は対象外とさせていただきます。
+    </p>
+
+  </section>
+
+
+  <!-- 展示 -->
+
+  <section class="section">
+
+    <h2>展示について</h2>
+
+    <p>
+      ご応募いただいた雪だるまは、
+      <strong>メイン会場内の上部スペース</strong>に展示する予定です。
+    </p>
+
+    <p>
+      1サークルにつき、最大4体まで展示いただけます。
+    </p>
+
+    <p>
+      1サークルから複数体ご応募いただいた場合は、
+      同じサークルの雪だるまとして横ならびで展示します。
+    </p>
+
+    <div class="highlight">
+      雪だるまの並べ順にご希望がある場合は、
+      メール本文へご記載ください。
+      <br><br>
+      例えば、
+      「○○（左）と○○（右）を隣り合わせにして、
+      ハイタッチしているように見せたい」
+      など、雪だるま同士の配置についてご希望がありましたら、
+      可能な範囲で対応いたします。
+    </div>
+
+    <p>
+      展示位置は主催側で決定いたします。
+    </p>
+
+  </section>
+
+
+  <!-- 作品の取り扱い -->
+
+  <section class="section">
+
+    <h2>作品の取り扱いについて</h2>
+
+    <p>
+      ご提出いただいた作品は、本企画の展示に必要な範囲で、
+      サイズ調整・配置・影などの加工を行う場合があります。
+    </p>
+
+    <p>
+      会場の背景になじむよう調整するためのものであり、
+      雪だるま本体への直接的な加筆・加工は極力避けますが、
+      あらかじめご了承ください。
+    </p>
+
+  </section>
+
+
+  <!-- 提出後の変更 -->
+
+  <section class="section">
+
+    <h2>提出後の変更・差し替えについて</h2>
+
+    <p>
+      提出後に修正・差し替えを行う場合は、
+      <strong>受付期限までに差し替え版を添付のうえ、
+      主催へご連絡ください。</strong>
+    </p>
+
+  </section>
+
+
+  <!-- 展示紹介 -->
+
+  <section class="section">
+
+    <h2>展示・紹介について</h2>
+
+    <p>
+      ご応募いただいた雪だるまは、
+      イベント会場内での展示のほか、
+      主催のXアカウント等で紹介させていただく場合があります。
+    </p>
+
+  </section>
+
+
+  <!-- お知らせ -->
+
+  <section class="section">
+
+    <h2>主催からのお知らせ</h2>
+
+    <p>
+      ・お送りいただいた雪だるま画像およびメールアドレスは、
+      本企画の運営・展示のみに使用し、それ以外の目的では使用いたしません。
+    </p>
+
+    <p>
+      ・参加者様が0名だった場合は、本企画を中止とさせていただきます。
+      中止の場合は、ピクスクの「お知らせ」にてご連絡いたします。
+    </p>
+
+    <p>
+      ・主催側の事情により、やむを得ず本企画の展示を
+      中止・変更する場合があります。
+      あらかじめご了承ください。
+    </p>
+
+    <p>
+      ・その場合も、ピクスクの「お知らせ」にてご連絡いたします。
+    </p>
+
+    <p>
+      ・ご不明な点がございましたら、
+      お気軽に主催までお問い合わせください。
+    </p>
+
+  </section>
+
+
+  <!-- 締切 -->
+
+  <section class="section">
+
+    <div class="deadline">
+
+      <div class="deadline-label">
+        ❄ 受付期限 ❄
+      </div>
+
+      <div class="deadline-date">
+        2026年11月15日（日）まで
+      </div>
+
+      <p>
+        イベント参加の思い出のひとつとして、
+        ぜひご検討いただけますと幸いです⛄
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- 最後 -->
+
+  <section class="section">
+
+    <p>
+      初めての企画となりますので、
+      至らぬ点もあるかと思いますが、
+      皆様の雪だるまが会場に並ぶ光景を、
+      一緒に作ることができましたら嬉しく思います⛄
+    </p>
+
+    <p style="text-align:center;">
+      <strong>
+        たくさんの主様のご参加をお待ちしております。
+      </strong>
+    </p>
+
+    <p style="text-align:center;">
+      どうぞよろしくお願いいたします。
+    </p>
+
+  </section>
+
+
+</div>
+
+
+<footer>
+
+  <div class="stars">
+    ✦ ❄ ✦ ❄ ✦
+  </div>
+
+  主様の雪だるままつり
+
+</footer>
+
+
+</body>
+</html>
+```
